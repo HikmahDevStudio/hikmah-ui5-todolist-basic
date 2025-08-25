@@ -1,0 +1,58 @@
+<mvc:View
+    controllerName="todolist.hds.ui5.todolist.controller.MainView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <headerContent>
+            <Text
+                id="headerId"
+                text="This is header"
+            />
+        </headerContent>
+        <content>
+            <Input
+                id="inputTask"
+                submit="submitTaskHandler"
+            />
+            <Button
+                id="addTask"
+                text="Add Task"
+                press="addTaskHandler"
+            />
+            <Button id="deleteTaskBtn" text="Delet" press="deleteTaskHandler" enabled="false"/>
+            <Button id="completeTaskBtn" text="MarkComplete" press="markCompleteTaskHandler" enabled="false"/>
+            <Text id="lable_pendingTasks" text="Pending Tasks" />
+            <List
+                id="taskList_pending"
+                includeItemInSelection="true"
+                mode="SingleSelectLeft"
+                selectionChange="selectTaskHandler"
+            >
+                <items>
+                    <StandardListItem
+                        id="todoLIistItemPending"
+                        title="{title}"
+                    />
+                </items>
+            </List>
+            <Text id="lable_completedTasks" text="Completed Tasks"/>
+            <List id="taskList_completed">
+                <items>
+                    <StandardListItem id="todolistItemCompleted" title="{title}"/>
+                </items>
+            </List>
+        </content>
+        <footer>
+            <Toolbar id="toolbarFooter">
+                <Text
+                    id="footertext"
+                    text="this is footer"
+                />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>
