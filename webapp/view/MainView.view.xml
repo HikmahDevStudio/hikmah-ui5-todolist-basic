@@ -3,48 +3,59 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
 >
-    <Page
-        id="page"
-        title="{i18n>title}"
-    >
-        <headerContent>
-            <Text
-                id="headerId"
-                text="This is header"
-            />
-        </headerContent>
+    <Page id="page">
         <content>
-            <Input
-                id="inputTask"
-                submit="submitTaskHandler"
-            />
-            <Button
-                id="addTask"
-                text="Add Task"
-                press="addTaskHandler"
-            />
-            <Button id="deleteTaskBtn" text="Delet" press="deleteTaskHandler" enabled="false"/>
-            <Button id="completeTaskBtn" text="MarkComplete" press="markCompleteTaskHandler" enabled="false"/>
-            <Text id="lable_pendingTasks" text="Pending Tasks" />
-            <List
-                id="taskList_pending"
-                includeItemInSelection="true"
-                mode="SingleSelectLeft"
-                selectionChange="selectTaskHandler"
-            >
-                <items>
-                    <StandardListItem
-                        id="todoLIistItemPending"
-                        title="{title}"
-                    />
-                </items>
-            </List>
-            <Text id="lable_completedTasks" text="Completed Tasks"/>
-            <List id="taskList_completed">
-                <items>
-                    <StandardListItem id="todolistItemCompleted" title="{title}"/>
-                </items>
-            </List>
+            
+            <VBox id="content_vbox_inputsection">
+                <Input
+                    id="inputTask"
+                    submit="submitTaskHandler" 
+                    placeholder="Please add new task"/>
+                <HBox id="main_btns">
+                    <Button 
+                        id="addTask" 
+                        text="Add Task" 
+                        press="addTaskHandler" />
+                    <Button 
+                        id="deleteTaskBtn" 
+                        text="Delet" 
+                        press="deleteTaskHandler" 
+                        enabled="false"/>
+                    <Button 
+                        id="completeTaskBtn" 
+                        text="MarkComplete" 
+                        press="markCompleteTaskHandler" 
+                        enabled="false"/>
+                </HBox>
+            </VBox>
+            <Panel 
+                id="panel__pendingTasks" 
+                expandable="true" 
+                expanded="false" 
+                headerText="View pending tasks" 
+                width="90%" 
+                class="sapUiResponsiveMargin"
+                height="auto"
+                expand="expandPendingPanelHandler">
+                <List
+                    id="taskList_pending"
+                    includeItemInSelection="true"
+                    mode="SingleSelectLeft"
+                    selectionChange="selectTaskHandler" >
+                    <items>
+                        <StandardListItem
+                            id="todoLIistItemPending"
+                            title="{title}" />
+                    </items>
+                </List>
+            </Panel>
+            <Panel id="panel__completedTasks" expandable="true" headerText="View completed tasks" width="90%" class="sapUiResponsiveMargin">
+                <List id="taskList_completed">
+                    <items>
+                        <StandardListItem id="todolistItemCompleted" title="{title}"/>
+                    </items>
+                </List>
+            </Panel>
         </content>
         <footer>
             <Toolbar id="toolbarFooter">
