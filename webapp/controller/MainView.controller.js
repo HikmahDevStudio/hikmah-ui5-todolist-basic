@@ -188,6 +188,7 @@ sap.ui.define(
         const isPanelExpanded = oEvent.getParameter("expand");
         const oPanelPendingTask = this.byId("panel__pendingTasks");
 
+        // Dynamically set the height of the panel
         if (!isPanelExpanded) {
           oPanelPendingTask.setHeight("auto");
         }
