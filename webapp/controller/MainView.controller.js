@@ -78,6 +78,7 @@ sap.ui.define(
 
       updateCompletedTaskPanelVisibility() {
         const oPanelCompletedTask = this.byId("panel__completedTasks");
+        const oListCompleted = this.byId("taskList_completed");
         const aCompletdTask = this.getView()
           .getModel()
           .getProperty("/tasks")
@@ -87,6 +88,10 @@ sap.ui.define(
         oPanelCompletedTask.setHeight(aCompletdTask > 10 ? "350px" : "auto");
         oPanelCompletedTask.setHeaderText(
           `View completed tasks (${aCompletdTask})`
+        );
+
+        oListCompleted.addStyleClass(
+          aCompletdTask > 0 ? "completedTaskText" : ""
         );
       },
 

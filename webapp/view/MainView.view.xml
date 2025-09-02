@@ -51,7 +51,7 @@
                 </List>
             </Panel>
             <Panel id="panel__completedTasks" expandable="true" headerText="Completed tasks" width="80%" class="sapUiSmallMarginBegin">
-                <List id="taskList_completed" class="completedTaskText">
+                <List id="taskList_completed">
                     <items>
                         <StandardListItem id="todolistItemCompleted" title="{title}"/>
                     </items>
