@@ -5,37 +5,38 @@
 >
     <Page id="page">
         <content>
-            
-            <VBox id="content_vbox_inputsection">
-                <Input
-                    id="inputTask"
-                    submit="submitTaskHandler" 
-                    placeholder="Please add new task"/>
-                <HBox id="main_btns">
-                    <Button 
-                        id="addTask" 
-                        text="Add Task" 
-                        press="addTaskHandler" />
-                    <Button 
-                        id="deleteTaskBtn" 
-                        text="Delet" 
-                        press="deleteTaskHandler" 
-                        enabled="false"/>
-                    <Button 
-                        id="completeTaskBtn" 
-                        text="MarkComplete" 
-                        press="markCompleteTaskHandler" 
-                        enabled="false"/>
-                </HBox>
-            </VBox>
+            <Input
+                id="inputTask"
+                submit="submitTaskHandler" 
+                class="sapUiSmallMarginEnd sapUiSmallMarginBegin sapUiContentPadding"
+                width="250px"
+                placeholder="Please add new task"/>
+            <Button 
+                id="deleteTaskBtn" 
+                type="Reject"
+                text="Delet" 
+                class="sapUiSmallMarginEnd"
+                icon="sap-icon://delete"
+                press="deleteTaskHandler" 
+                width="100px"
+                enabled="false"/>
+            <Button 
+                id="completeTaskBtn" 
+                text="Complete"
+                type="Accept"
+                class="inputTask"
+                icon="sap-icon://complete"
+                press="markCompleteTaskHandler" 
+                width="100px"
+                enabled="false"/>
             <Panel 
                 id="panel__pendingTasks" 
                 expandable="true" 
                 expanded="false" 
-                headerText="View pending tasks" 
-                width="90%" 
-                class="sapUiResponsiveMargin"
+                headerText="Pending tasks" 
+                class="sapUiSmallMarginBegin sapUiSmallMarginTop sapUiSmallMarginBottom"
                 height="auto"
+                width="80%"
                 expand="expandPendingPanelHandler">
                 <List
                     id="taskList_pending"
@@ -49,8 +50,8 @@
                     </items>
                 </List>
             </Panel>
-            <Panel id="panel__completedTasks" expandable="true" headerText="View completed tasks" width="90%" class="sapUiResponsiveMargin">
-                <List id="taskList_completed">
+            <Panel id="panel__completedTasks" expandable="true" headerText="Completed tasks" width="80%" class="sapUiSmallMarginBegin">
+                <List id="taskList_completed" class="completedTaskText">
                     <items>
                         <StandardListItem id="todolistItemCompleted" title="{title}"/>
                     </items>
