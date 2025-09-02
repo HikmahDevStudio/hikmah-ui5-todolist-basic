@@ -89,6 +89,7 @@ sap.ui.define(
           `View completed tasks (${aCompletdTask})`
         );
       },
+
       selectTaskHandler(oEvent) {
         const oSelectedRow = oEvent
           ?.getSource()
