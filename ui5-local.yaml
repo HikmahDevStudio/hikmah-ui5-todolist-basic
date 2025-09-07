@@ -2,7 +2,7 @@
 
 specVersion: "3.1"
 metadata:
-  name: hds.ui5.todolist
+  name: hds.ui5.todolistBasic
 type: application
 framework:
   name: SAPUI5

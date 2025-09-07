@@ -9,7 +9,7 @@ sap.ui.define(
   (Controller, Filter, FilterOperator, StandardListItem, JSONModel) => {
     "use strict";
 
-    return Controller.extend("hds.ui5.todolist.controller.MainView", {
+    return Controller.extend("hds.ui5.todolistBasic.controller.MainView", {
       onInit() {
         console.log("MainView controller initialized");
         this.bindFilteredList();

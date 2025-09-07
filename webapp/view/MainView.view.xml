@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="hds.ui5.todolist.controller.MainView"
+    controllerName="hds.ui5.todolistBasic.controller.MainView"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
 >
