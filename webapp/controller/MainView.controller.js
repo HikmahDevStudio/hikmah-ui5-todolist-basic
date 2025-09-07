@@ -9,7 +9,7 @@ sap.ui.define(
   (Controller, Filter, FilterOperator, StandardListItem, JSONModel) => {
     "use strict";
 
-    return Controller.extend("todolist.hds.ui5.todolist.controller.MainView", {
+    return Controller.extend("hds.ui5.todolist.controller.MainView", {
       onInit() {
         console.log("MainView controller initialized");
         this.bindFilteredList();
@@ -73,7 +73,7 @@ sap.ui.define(
 
         oPanelPendingTask.setExpanded(aPendingTask > 0);
         oPanelPendingTask.setHeight(aPendingTask > 10 ? "350px" : "auto");
-        oPanelPendingTask.setHeaderText(`View pending tasks (${aPendingTask})`);
+        oPanelPendingTask.setHeaderText(`Pending tasks (${aPendingTask})`);
       },
 
       updateCompletedTaskPanelVisibility() {
@@ -87,7 +87,9 @@ sap.ui.define(
         // oPanelCompletedTask.setExpanded(aCompletdTask > 0);
         oPanelCompletedTask.setHeight(aCompletdTask > 10 ? "350px" : "auto");
         oPanelCompletedTask.setHeaderText(
-          `View completed tasks (${aCompletdTask})`
+          aCompletdTask > 0
+            ? `Completed tasks (${aCompletdTask})`
+            : "Completed tasks"
         );
 
         oListCompleted.addStyleClass(
