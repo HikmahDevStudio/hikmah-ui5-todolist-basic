@@ -1,7 +1,7 @@
 {
   "_version": "1.76.0",
   "sap.app": {
-    "id": "todolist.hds.ui5.todolist",
+    "id": "hds.ui5.todolist",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -53,7 +53,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "todolist.hds.ui5.todolist.i18n.i18n"
+          "bundleName": "hds.ui5.todolist.i18n.i18n"
         }
       }
     },
@@ -72,17 +72,15 @@
         "transition": "slide",
         "type": "View",
         "viewType": "XML",
-        "path": "todolist.hds.ui5.todolist.view",
+        "path": "hds.ui5.todolist.view",
         "async": true,
-        "viewPath": "todolist.hds.ui5.todolist.view"
+        "viewPath": "hds.ui5.todolist.view"
       },
       "routes": [
         {
           "name": "RouteMainView",
           "pattern": ":?query:",
-          "target": [
-            "TargetMainView"
-          ]
+          "target": ["TargetMainView"]
         }
       ],
       "targets": {
@@ -93,13 +91,13 @@
       }
     },
     "rootView": {
-      "viewName": "todolist.hds.ui5.todolist.view.App",
+      "viewName": "hds.ui5.todolist.view.App",
       "type": "XML",
       "id": "App",
       "async": true
     },
     "config": {
-      "theme": "sap_fiori_3_dark"  
+      "theme": "sap_fiori_3_dark"
     }
   }
 }

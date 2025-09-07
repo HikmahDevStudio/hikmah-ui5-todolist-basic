@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="todolist.hds.ui5.todolist.controller.MainView"
+    controllerName="hds.ui5.todolist.controller.MainView"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
 >
@@ -18,7 +18,7 @@
                 class="sapUiSmallMarginEnd"
                 icon="sap-icon://delete"
                 press="deleteTaskHandler" 
-                width="100px"
+                width="80px"
                 enabled="false"/>
             <Button 
                 id="completeTaskBtn" 
