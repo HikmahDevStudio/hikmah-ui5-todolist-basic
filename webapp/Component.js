@@ -1,9 +1,9 @@
 sap.ui.define(
-  ["sap/ui/core/UIComponent", "hds/ui5/todolist/model/models"],
+  ["sap/ui/core/UIComponent", "hds/ui5/todolistBasic/model/models"],
   (UIComponent, models) => {
     "use strict";
 
-    return UIComponent.extend("hds.ui5.todolist.Component", {
+    return UIComponent.extend("hds.ui5.todolistBasic.Component", {
       metadata: {
         manifest: "json",
         interfaces: ["sap.ui.core.IAsyncContentCreation"],
